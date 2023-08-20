@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * cs_print - function printing characters by handling c,s & %
+ * c_print - function printing characters by handling c,s & %
  * @format: string to print
  * Return: -1 if void and 0 (success)
  */
-int cs_print(const char *format, ...)
+int c_print(const char *format, ...)
 {
 	int zero_printed = 0;
 	int L = 0;
@@ -12,8 +12,9 @@ int cs_print(const char *format, ...)
 
 	va_start(myzero, format);
 
-	if(format == NULL)
+	if (format == NULL)
 		return (-1);
+
 	while (*format)
 	{
 		if (*format != '%')
@@ -28,31 +29,65 @@ int cs_print(const char *format, ...)
 			if (*format == 'c')
 			{
 				char character = va_arg(myzero, int);
+
 				write(1, &character, 1);
 				zero_printed++;
 			}
-			else if (*format == 's')
-			{
-				char *StRInG = va_arg(myzero, char *);
-				while( StRInG[L] != '\0')
-				{
-					L++;
-				}
-				write(1, StRInG, L);
-				zero_printed += L;
-			}
-                        if (*format == '\0')
-                                break;
-                }
-                format++;
-        }
-        va_end(myzero);
+			if (format == '\0')
+				break;
+		}
+		format++;
+	}
+	va_end(myzero);
+	return (zero_printed);
+}
+/**
+ * s_print - funtion that considers the %s parameter
+ * @format: input string
+ * Return: -1
+ */
+int s_print(const char *format, ...)
+{
+	int zero_printed = 0;
+	int zero;
+	va_list myzero;
 
-        return (zero_printed);
+	va_start(myzero, format);
+	if (format == NULL)
+		return (-1);
+
+	while (*format)
+	{
+		if (*format != '%')
+			write(1, format, 1);
+			Zero_printed++;
+	}
+		else
+		{
+			format++;
+			switch (*format)
+			{
+				case ‘s’:
+				char *StRInG = va_arg(myzero, char *);
+				Int L;
+
+				for (L = 0; StRInG[L] != ‘\0’; L++)
+				{
+					write(1, StRInG, L);
+				}
+					zero_printed++;
+					L++;
+			if (format == '\0')
+				break;
+				format++;
+			}
+			va_end(myzero);
+		}
+		return (zero_printed);
 }
 /**
  * percent_print - prints the percent sign
- *
+ * @format: input string
  * Return: 0 (success)
  */
 int percent_print(const char *format, ...)
@@ -60,28 +95,31 @@ int percent_print(const char *format, ...)
 	int zero_printed = 0;
 	va_list myzero;
 
-        va_start(myzero, format);
+	va_start(myzero, format);
 
-        if(format == NULL)
-                return (-1);
-        while (*format)
-        {
-                if (*format != '%')
-                {
-                        write(1, format, 1);
-                        zero_printed++;
-                }
-                else
+	if (format == NULL)
+		return (-1);
+	while (*format)
+	{
+		if (*format != '%')
 		{
-                        format++;
-		if (*format == '%')
-			{
-				char percent = '%';
+			write(1, format, 1);
+			zero_printed++;
+		}
+		else
+		{
+			format++;
+		switch (*format)
+		{
+			case '%':
+				char percent = va_arg(myzero, int);
+
 				write(1, &percent, 1);
 				zero_printed++;
-			}
-			if (*format == '\0')
-				break;
+		}
+		if (*format == '\0')
+		{
+			break;
 		}
 		format++;
 	}
