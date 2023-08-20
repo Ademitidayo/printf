@@ -8,6 +8,8 @@
 
 int _printf(const char *format, ...);
 int percent_printf(const char *format, ...);
+int c_print(const char *format, ...);
+int s_print(const char *format, ...);
 
 #endif
 
