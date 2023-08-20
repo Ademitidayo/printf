@@ -56,4 +56,3 @@ int _printf(const char *format, ...)
 
 	return (zero_printed);
 }
-int;
