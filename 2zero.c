@@ -73,4 +73,4 @@ int all_print(const char format, va_list myzero)
 		default:
 			return (0);
 	}
-}
+
