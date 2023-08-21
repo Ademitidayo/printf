@@ -35,4 +35,4 @@ int _printf(const char *format, ...)
 	va_end(myzero);
 	return (zero_printed);
 }
-delete
+delete1
