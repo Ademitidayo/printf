@@ -19,9 +19,11 @@ int _printf(const char *format, ...)
 		{
 			write(1, format, 1);
 			zero_printed++;
-		} else
+		} 
+		else
 		{
 			format++;
+		}
 		if (*format != '\0')
 		{
 			switch (*format)
