@@ -12,7 +12,6 @@ int c_print(va_list myzero)
 	write(1, &oge, 1);
 	zero_printed++;
 
-
 	return (zero_printed);
 }
 /**
@@ -73,4 +72,5 @@ int all_print(const char format, va_list myzero)
 		default:
 			return (0);
 	}
+	write(1, "\n", 1);
 }
