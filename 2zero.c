@@ -54,3 +54,23 @@ int percent_print(va_list myzero)
 		}
 	return (zero_printed);
 }
+/**
+ * all_print - merges the c, s, % printf functions
+ * @format: character of the specifier
+ * @myzero: string to print
+ * Return: 0 (success)
+ */
+int all_print(const char format, va_list myzero)
+{
+	switch (format)
+	{
+		case 'c':
+			return (c_print(myzero));
+		case 's':
+			return (s_print(myzero));
+		case '%':
+			return (percent_print(myzero));
+		default:
+			return (0);
+	}
+}

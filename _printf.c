@@ -19,32 +19,18 @@ int _printf(const char *format, ...)
 		{
 			write(1, format, 1);
 			zero_printed++;
-		} 
+		}
 		else
 		{
 			format++;
-		}
 		if (*format != '\0')
 		{
-			switch (*format)
-			{
-				case 'c':
-					zero_printed += c_print(myzero);
-					break;
-				case '%':
-					zero_printed += percent_print(myzero);
-					break;
-				case 's':
-					zero_printed += s_print(myzero);
-					break;
-				default:
-					break;
-			}
+			zero_printed += all_print(*format, myzero);
 		}
 		else
 			break;
 		}
-	format++;
+		format++;
 	}
 	va_end(myzero);
 	return (zero_printed);
