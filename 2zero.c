@@ -7,7 +7,6 @@
 int c_print(const char *format, ...)
 {
 	int zero_printed = 0;
-	int L = 0;
 	va_list myzero;
 
 	va_start(myzero, format);
@@ -33,8 +32,6 @@ int c_print(const char *format, ...)
 				write(1, &character, 1);
 				zero_printed++;
 			}
-			if (format == '\0')
-				break;
 		}
 		format++;
 	}
@@ -49,41 +46,46 @@ int c_print(const char *format, ...)
 int s_print(const char *format, ...)
 {
 	int zero_printed = 0;
-	int zero;
 	va_list myzero;
 
 	va_start(myzero, format);
+	
 	if (format == NULL)
 		return (-1);
 
 	while (*format)
 	{
 		if (*format != '%')
+		{
 			write(1, format, 1);
 			Zero_printed++;
-	}
-		else
-		{
-			format++;
-			switch (*format)
-			{
-				case ‘s’:
-				char *StRInG = va_arg(myzero, char *);
-				Int L;
-
-				for (L = 0; StRInG[L] != ‘\0’; L++)
-				{
-					write(1, StRInG, L);
-				}
-					zero_printed++;
-					L++;
-			if (format == '\0')
-				break;
-				format++;
-			}
-			va_end(myzero);
 		}
-		return (zero_printed);
+	}
+	else
+	{
+		format++;
+		switch (*format)
+		{
+			case ‘s’:
+		{
+			char *StRInG = va_arg(myzero, char *);
+			int m = 0;
+
+			for (m = 0; StRInG[m] != ‘\0’; m++)
+			{
+				m++;
+			}
+			write(1, StRInG, L);
+			zero_printed++;
+			break;
+			
+		}
+		}
+	}
+	format++;
+	}
+	va_end(myzero);
+	return (zero_printed);
 }
 /**
  * percent_print - prints the percent sign
@@ -99,6 +101,7 @@ int percent_print(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
+	
 	while (*format)
 	{
 		if (*format != '%')
@@ -116,14 +119,11 @@ int percent_print(const char *format, ...)
 
 				write(1, &percent, 1);
 				zero_printed++;
+				break;
 		}
-		if (*format == '\0')
-		{
-			break;
 		}
 		format++;
 	}
 	va_end(myzero);
-
 	return (zero_printed);
 }
