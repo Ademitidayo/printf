@@ -25,14 +25,14 @@ int s_print(va_list myzero)
 	int zero_printed = 0;
 	char *ade = va_arg(myzero, char *);
 	
-	int m = 0;
-
-	while (ade[m] != '\0')
 	{
-		m++;
+		int m = 0;
+
+		while (ade[m] != '\0')
+			m++;
+		write(1, ade, m);
+		zero_printed += m;
 	}
-	write(1, ade, m);
-	zero_printed += m;
 	return (zero_printed);
 }
 /**
