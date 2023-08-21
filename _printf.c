@@ -26,7 +26,6 @@ int _printf(const char *format, ...)
 		if (*format != '\0')
 		{
 			zero_printed += all_print(*format, myzero);
-			write(1, "\n", 1);
 		}
 		else
 			break;
