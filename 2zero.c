@@ -77,6 +77,8 @@ int all_print(va_list myzero, const char format)
 	switch (format)
 
 	{
+		case ' ':
+			return (-1);
 		case 'c':
 			return (c_print(myzero));
 		case 's':
