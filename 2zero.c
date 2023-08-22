@@ -11,8 +11,8 @@ int c_print(va_list myzero)
 		
 		if (oge == '\0')
 		{
-		write(1, "-1", 2);
-		zero_printed += 2;
+		write(1, " ", 1);
+		zero_printed += 1;
 		}
 		else
 		{
@@ -35,7 +35,7 @@ int s_print(va_list myzero)
 
 	if (ade == NULL)
 	{
-		write(1, " ", );
+		write(1, " ", 1);
 		zero_printed += 2;
 	}
 	else
