@@ -8,7 +8,7 @@ int c_print(va_list myzero)
 {
 	int zero_printed = 0;
 	char oge = va_arg(myzero, int);
-		
+
 		if (oge == '\0')
 		{
 		write(1, " ", 1);
@@ -42,11 +42,10 @@ int s_print(va_list myzero)
 	{
 		while (ade[m] != '\0')
 			m++;
-
-		write(1, ade, m);		
+		write(1, ade, m);
 		zero_printed += m;
 	}
-		
+
 		return (zero_printed);
 }
 /**

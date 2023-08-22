@@ -8,8 +8,9 @@ int _printf(const char *format, ...)
 {
 	int zero_printed = 0;
 	va_list myzero;
+
 	va_start(myzero, format);
-	
+
 	if (format == NULL)
 		return (-1);
 	while (*format)
