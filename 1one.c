@@ -14,10 +14,10 @@ int d_print (va_list myzero)
 	if (num < 0)
 	{
 		num = -num;
-		write(1, "-", 1);
 		zero_printed++;
+		write(1, "-", 1);
 	}
-
+	
 	last_digit = num;
 
 	while (last_digit > 0)
@@ -32,10 +32,10 @@ int d_print (va_list myzero)
 
 	index = zero_printed - 1;
 
-	while (last_digit > 0)
+	while (num > 0)
 	{
-		point[index] = (last_digit % 10) + '0';
-		last_digit /= 10;
+		point[index] = (num % 10) + '0';
+		num /= 10;
 		index--;
 	}
 

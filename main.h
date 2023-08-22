@@ -12,6 +12,5 @@ int c_print(va_list myzero);
 int all_print(va_list myzero, const char format);
 int S_L(va_list myzero);
 int d_print (va_list myzero);
-
-
+int b_print(va_list myzero);
 #endif
