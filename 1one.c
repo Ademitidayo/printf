@@ -22,7 +22,6 @@ int d_print (va_list myzero)
 		zero_printed++;
 		write(1, "-", 1);
 	}
-
 	last_digit = num;
 
 	while (last_digit > 0)
@@ -30,20 +29,16 @@ int d_print (va_list myzero)
 		last_digit /= 10;
 		zero_printed++;
 	}
-
 	point = (char *)malloc((zero_printed + 1) * sizeof(char));
 	if (point == NULL)
 		return (-1);
-
 	index = zero_printed - 1;
-
 	while (num > 0)
 	{
 		point[index] = (num % 10) + '0';
 		num /= 10;
 		index--;
 	}
-
 	point[zero_printed] = '\0';
 
 	write(1, point, zero_printed);
