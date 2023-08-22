@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 				zero_printed += all_print(myzero, *format);
 			}
 		}
-		format++;
+	format++;
 	}
 	va_end(myzero);
 	return (zero_printed);
