@@ -17,7 +17,7 @@ int d_print (va_list myzero)
 		zero_printed++;
 		write(1, "-", 1);
 	}
-	
+
 	last_digit = num;
 
 	while (last_digit > 0)
