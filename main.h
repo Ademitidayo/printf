@@ -14,6 +14,8 @@ int all_print(va_list myzero, const char format);
 int S_L(va_list myzero);
 int d_print (va_list myzero);
 int b_print(va_list myzero);
-int _putchar(char c);
+int _putchar2(char ch);
+int _integer(va_list myzero);
+int _uinteger(va_list myzero);
 
 #endif
