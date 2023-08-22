@@ -31,6 +31,6 @@ int _uinteger(va_list myzero)
 	{
 		return (-1);
 	}
-	
+
 	return (d_print(myzero));
 }
