@@ -61,6 +61,7 @@ int percent_print(va_list myzero)
  */
 int all_print(const char format, va_list myzero)
 {
+	int zero_printed = 0;
 	switch (format)
 	{
 		case 'c':
@@ -72,5 +73,12 @@ int all_print(const char format, va_list myzero)
 		default:
 			return (0);
 	}
-	write(1, "\n", 1);
+	if (format != '\0')
+	{
+		if (format == 's')
+		{
+			zero_printed += S_L(myzero);
+		}
+	}
+	return (write(1, "\n", 1));
 }
