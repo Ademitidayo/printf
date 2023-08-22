@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
-		if (*format != '\0')
+			if (*format != '\0')
 			{
 				zero_printed += all_print(myzero, *format);
 			}

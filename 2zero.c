@@ -29,7 +29,7 @@ int s_print(va_list myzero)
 			m++;
 		write(1, ade, m);
 		zero_printed += m;
-	
+
 		return (zero_printed);
 }
 /**
