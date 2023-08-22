@@ -4,7 +4,6 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
 int _printf(const char *format, ...);
 int percent_print(va_list myzero);
 int s_print(va_list myzero);
