@@ -26,10 +26,11 @@ int s_print(va_list myzero)
 		int m = 0;
 
 		while (ade[m] != '\0')
+		
 			m++;
-		write(1, ade, m);
+		write(1, ade, m);		
 		zero_printed += m;
-
+		
 		return (zero_printed);
 }
 /**
