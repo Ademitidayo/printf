@@ -27,6 +27,10 @@ int _printf(const char *format, ...)
 			{
 				zero_printed += all_print(myzero, *format);
 			}
+			else if (*format == 'd' || *format == 'i')
+			{
+				zero_printed += d_print(myzero);
+			}
 		}
 	format++;
 	}

@@ -4,7 +4,7 @@
  * @myzero: input string
  * Return: 0 (success)
  */
-int d_print (va_list myzero)
+int d_print(va_list myzero)
 {
 	int zero_printed = 0;
 	int num = va_arg(myzero, int);

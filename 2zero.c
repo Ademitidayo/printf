@@ -86,9 +86,9 @@ int all_print(va_list myzero, const char format)
 		case '%':
 			return (percent_print(myzero));
 		case 'd':
-			return (d_print (myzero));
+			return (d_print(myzero));
 		case 'i':
-			return (d_print (myzero));
+			return (d_print(myzero));
 		default:
 			write(1, "%", 1);
 			write(1, &format, 1);
