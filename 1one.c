@@ -20,3 +20,50 @@ int S_L(va_list myzero)
 	}
 	return (zero_printed);
 }
+/**
+ * d_print - prints a string and considers the d and i specifiers
+ * @myzero: input string
+ * Return: 0 (success)
+ */
+int d_print (va_list myzero)
+{
+	int zero_printed = 0;
+	int num = va_arg(myzero, int);
+	int last_digit, ogearr;
+	char *point;
+
+	if (num < 0)
+	{
+		num = -num;
+		write(1, "-", 1);
+		zero_printed++;
+	}
+
+	last_digit = num;
+	
+	while (last_digit > 0)
+	{
+		last_digit /= 10;
+		zero_printed++;
+	}
+
+	point = (char *)malloc((zero_printed + 1) * sizeof(char));
+	if (point == NULL)
+		return -1;
+
+	ogearr = zero_printed - 1;
+
+	while (last_digit > 0)
+	{
+		point[ogearr] = (last_digit % 10) + '0';
+		last_digit /= 10;
+		ogearr--;
+	}
+
+	point[zero_printed] = '\0';
+
+	write(1, point, zero_printed);
+	free(point);
+
+	return (zero_printed);
+}

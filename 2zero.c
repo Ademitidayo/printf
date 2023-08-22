@@ -63,6 +63,7 @@ int all_print(const char format, va_list myzero)
 {
 	int zero_printed = 0;
 	switch (format)
+	
 	{
 		case 'c':
 			return (c_print(myzero));
@@ -70,6 +71,9 @@ int all_print(const char format, va_list myzero)
 			return (s_print(myzero));
 		case '%':
 			return (percent_print(myzero));
+		case 'd':
+		case 'i':
+			return (d_print (myzero));
 		default:
 			return (0);
 	}
