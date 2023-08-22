@@ -35,8 +35,8 @@ int s_print(va_list myzero)
 
 	if (ade == NULL)
 	{
-		write(1, " ", 1);
-		zero_printed += 2;
+		write(1, "(null)", 6);
+		zero_printed += 6;
 	}
 	else
 	{
@@ -88,6 +88,8 @@ int all_print(va_list myzero, const char format)
 		case 'i':
 			return (d_print (myzero));
 		default:
-			return (0);
+			write(1, "%", 1);
+			write(1, &format, 1);
+			return (2);
 	}
 }

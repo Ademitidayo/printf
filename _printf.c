@@ -15,9 +15,6 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (*format)
 	{
-		if (*format == '\0')
-			return (-1);
-	{
 		if (*format != '%')
 		{
 			write(1, format, 1);
@@ -32,7 +29,6 @@ int _printf(const char *format, ...)
 			}
 		}
 	format++;
-	}
 	}
 	va_end(myzero);
 	return (zero_printed);
