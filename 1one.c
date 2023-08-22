@@ -11,7 +11,12 @@ int d_print (va_list myzero)
 	int last_digit, index;
 	char *point;
 
-	if (num < 0)
+	if (num == '\0')
+	{
+		write(1, "0", 1);
+		zero_printed += 1;
+	}
+	else if (num < 0)
 	{
 		num = -num;
 		zero_printed++;
