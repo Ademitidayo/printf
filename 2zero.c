@@ -8,9 +8,17 @@ int c_print(va_list myzero)
 {
 	int zero_printed = 0;
 	char oge = va_arg(myzero, int);
-
-	write(1, &oge, 1);
-	zero_printed++;
+		
+		if (oge == '\0')
+		{
+		write(1, "-1", 2);
+		zero_printed += 2;
+		}
+		else
+		{
+			write(1, &oge, 1);
+			zero_printed++;
+		}
 
 	return (zero_printed);
 }
@@ -23,13 +31,21 @@ int s_print(va_list myzero)
 {
 	int zero_printed = 0;
 	char *ade = va_arg(myzero, char *);
-		int m = 0;
+	int m = 0;
 
+	if (ade == NULL)
+	{
+		write(1, " ", );
+		zero_printed += 2;
+	}
+	else
+	{
 		while (ade[m] != '\0')
-		
 			m++;
+
 		write(1, ade, m);		
 		zero_printed += m;
+	}
 		
 		return (zero_printed);
 }
@@ -48,9 +64,7 @@ int percent_print(va_list myzero)
 			write(1, &percent, 1);
 			zero_printed++;
 		}
-		{
 			(void)day;
-		}
 	return (zero_printed);
 }
 /**
