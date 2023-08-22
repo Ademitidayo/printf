@@ -72,18 +72,9 @@ int all_print(const char format, va_list myzero)
 			return (s_print(myzero));
 		case '%':
 			return (percent_print(myzero));
-		case 'd':
-		case 'i':
-			return (d_print (myzero));
 		default:
 			return (0);
 	}
-	if (format != '\0')
-	{
-		if (format == 's')
-		{
-			zero_printed += S_L(myzero);
-		}
-	}
-	return (write(1, "\n", 1));
+	(write(1, "\n", 1));
+	return (zero_printed);
 }
