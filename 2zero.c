@@ -23,15 +23,14 @@ int s_print(va_list myzero)
 {
 	int zero_printed = 0;
 	char *ade = va_arg(myzero, char *);
-	{
 		int m = 0;
 
 		while (ade[m] != '\0')
 			m++;
 		write(1, ade, m);
 		zero_printed += m;
-	}
-	return (zero_printed);
+	
+		return (zero_printed);
 }
 /**
  * percent_print - prints the percent sign
@@ -59,10 +58,8 @@ int percent_print(va_list myzero)
  * @myzero: string to print
  * Return: 0 (success)
  */
-int all_print(const char format, va_list myzero)
+int all_print(va_list myzero, const char format)
 {
-	int zero_printed = 0;
-	
 	switch (format)
 
 	{
@@ -72,9 +69,11 @@ int all_print(const char format, va_list myzero)
 			return (s_print(myzero));
 		case '%':
 			return (percent_print(myzero));
+		case 'd':
+			return (d_print (myzero));
+		case 'i':
+			return (d_print (myzero));
 		default:
 			return (0);
 	}
-	(write(1, "\n", 1));
-	return (zero_printed);
 }

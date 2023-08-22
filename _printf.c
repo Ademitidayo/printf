@@ -24,11 +24,9 @@ int _printf(const char *format, ...)
 		{
 			format++;
 		if (*format != '\0')
-		{
-			zero_printed += all_print(*format, myzero);
-		}
-		else
-			break;
+			{
+				zero_printed += all_print(myzero, *format);
+			}
 		}
 		format++;
 	}
