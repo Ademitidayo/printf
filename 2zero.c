@@ -76,4 +76,5 @@ int all_print(va_list myzero, const char format)
 		default:
 			return (0);
 	}
+	putchar('\n');
 }
