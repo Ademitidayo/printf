@@ -1,12 +1,15 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#define BUFF_SIZE 1024
+
+
+
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <limits.h>
 #include <stdio.h>
-#define ade_oge 1024
 
 int _printf(const char *format, ...);
 int percent_print(va_list myzero);
