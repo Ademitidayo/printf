@@ -89,8 +89,6 @@ int all_print(va_list myzero, const char format)
 			return (d_print(myzero));
 		case 'i':
 			return (d_print(myzero));
-		case 'b':
-			return (b_print(myzero));
 		default:
 			write(1, "%", 1);
 			write(1, &format, 1);
