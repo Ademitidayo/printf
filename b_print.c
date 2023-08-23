@@ -2,7 +2,7 @@
 
 /**
  * b_print - Handles the b custom conversion specifier
- * @myzero - input
+ * @myzero: input
  * Return: 0 (success)
  */
 int b_print(va_list myzero)
@@ -13,7 +13,7 @@ int b_print(va_list myzero)
 	char point;
 
 	ade = va_arg(myzero, unsigned int);
-	oge = 2147483648; /* (2 ^ 31) */
+	oge = (2 ^ 31)
 	a[0] = ade / oge;
 	for (day = 1; day < 32; day++)
 	{
