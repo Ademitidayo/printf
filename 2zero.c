@@ -10,10 +10,7 @@ int c_print(va_list myzero)
 	char oge = va_arg(myzero, int);
 
 		if (oge == '\0')
-		{
-		write(1, " ", 1);
-		zero_printed += 1;
-		}
+			return (0);
 		else
 		{
 			write(1, &oge, 1);
@@ -71,8 +68,8 @@ int percent_print(va_list myzero)
 			m++;
 		percent = '%';
 
-		write(1, &percent, 1);
-		zero_printed++;
+		write(1, &percent, m);
+		zero_printed += m;
 	}
 	return (zero_printed);
 }
