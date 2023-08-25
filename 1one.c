@@ -12,15 +12,13 @@ int d_print(va_list myzero)
 	char *point;
 
 	if (num == '\0')
-	{
-		write(1, "0", 1);
-		zero_printed += 1;
-	}
+		return (0);
+
 	else if (num < 0)
 	{
 		num = -num;
-		zero_printed++;
 		write(1, "-", 1);
+		zero_printed++;
 	}
 	last_digit = num;
 
@@ -29,7 +27,7 @@ int d_print(va_list myzero)
 		last_digit /= 10;
 		zero_printed++;
 	}
-	point = (char *)malloc((zero_printed + 1) * sizeof(char));
+	point = (char *)malloc((zero_printed + 2) * sizeof(char));
 	if (point == NULL)
 		return (-1);
 	index = zero_printed - 1;

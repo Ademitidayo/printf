@@ -10,7 +10,7 @@ int c_print(va_list myzero)
 	char oge = va_arg(myzero, int);
 
 		if (oge == '\0')
-			return (0);
+			return (1);
 
 		write(1, &oge, 1);
 		zero_printed++;
@@ -45,28 +45,18 @@ int s_print(va_list myzero)
 }
 /**
  * percent_print - prints the percent sign
- * @myzero: input string
+ *
  * Return: 0 (success)
  */
 int percent_print(va_list myzero)
 {
-	int zero_printed = 0;
-	char *day = va_arg(myzero, char *);
 	char percent;
 
-	if (day == NULL)
-	{
-		write(1, "(null)", 6);
-		zero_printed += 6;
-	}
-	else
-	{
-		percent = '%';
+	UNUSED(myzero);
 
-		write(1, &percent, 1);
-		zero_printed += 1;
-	}
-	return (zero_printed);
+	percent = '%';
+	write(1, &percent, 1);
+	return (1);
 }
 /**
  * all_print - merges the c, s, % printf functions
@@ -76,23 +66,31 @@ int percent_print(va_list myzero)
  */
 int all_print(va_list myzero, const char format)
 {
+	int result;
+
 	switch (format)
 	{
 		case ' ':
-			return (-1);
+			result = (-1);
+			break;
 		case 'c':
-			return (c_print(myzero));
+			result = (c_print(myzero));
+			break;
 		case 's':
-			return (s_print(myzero));
+			result = (s_print(myzero));
+			break;
 		case '%':
-			return (percent_print(myzero));
+			result = (percent_print(myzero));
+			break;
 		case 'd':
-			return (d_print(myzero));
 		case 'i':
-			return (d_print(myzero));
+			result = (d_print(myzero));
+			break;
 		default:
 			write(1, "%", 1);
 			write(1, &format, 1);
-			return (2);
+			result = 2;
+			break;
 	}
+	return (result);
 }
