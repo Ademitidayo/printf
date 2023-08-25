@@ -57,13 +57,14 @@ int percent_print(va_list myzero)
 {
 	int zero_printed = 0;
 	char *day = va_arg(myzero, char *);
+		while (day != '\0')
 		{
 			char percent = '%';
 
 			write(1, &percent, 1);
 			zero_printed++;
+			day++;
 		}
-			(void)day;
 	return (zero_printed);
 }
 /**
