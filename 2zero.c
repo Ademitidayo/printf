@@ -10,7 +10,7 @@ int c_print(va_list myzero)
 	char oge = va_arg(myzero, int);
 
 		if (oge == '\0')
-			return (1);
+			return (0);
 
 		write(1, &oge, 1);
 		zero_printed++;

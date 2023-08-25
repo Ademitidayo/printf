@@ -17,8 +17,7 @@ int _printf(const char *format, ...)
 	while (*format)
 	{
 		if (*format != '%')
-		{
-			write(1, format, 1);
+		{       write(1, format, 1);
 			zero_printed++;
 		}
 		else
@@ -28,8 +27,12 @@ int _printf(const char *format, ...)
 			{
 				zero_printed += all_print(myzero, *format);
 			}
+			else
+			{
+				break;
+			}
 		}
-	format++;
+		format++;
 	}
 	va_end(myzero);
 	return (zero_printed);
