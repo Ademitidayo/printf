@@ -45,7 +45,7 @@ int s_print(va_list myzero)
 }
 /**
  * percent_print - prints the percent sign
- *
+ * @myzero: input
  * Return: 0 (success)
  */
 int percent_print(va_list myzero)
