@@ -13,10 +13,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-	
-	if (strcmp(format, "%") == 0)
-		return (0);
-	
+
 	while (*format)
 	{
 		if (*format != '%')
@@ -30,10 +27,6 @@ int _printf(const char *format, ...)
 			if (*format != '\0')
 			{
 				zero_printed += all_print(myzero, *format);
-			}
-			else if (*format == 'd' || *format == 'i')
-			{
-				zero_printed += d_print(myzero);
 			}
 		}
 	format++;

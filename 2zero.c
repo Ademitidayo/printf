@@ -10,12 +10,10 @@ int c_print(va_list myzero)
 	char oge = va_arg(myzero, int);
 
 		if (oge == '\0')
-			return (0);
-		else
-		{
-			write(1, &oge, 1);
-			zero_printed++;
-		}
+			return (1);
+
+		write(1, &oge, 1);
+		zero_printed++;
 
 	return (zero_printed);
 }
@@ -54,7 +52,6 @@ int percent_print(va_list myzero)
 {
 	int zero_printed = 0;
 	char *day = va_arg(myzero, char *);
-	int m = 0;
 	char percent;
 
 	if (day == NULL)
@@ -64,12 +61,10 @@ int percent_print(va_list myzero)
 	}
 	else
 	{
-		while (day[m] != '\0')
-			m++;
 		percent = '%';
 
-		write(1, &percent, m);
-		zero_printed += m;
+		write(1, &percent, 1);
+		zero_printed += 1;
 	}
 	return (zero_printed);
 }
@@ -82,7 +77,6 @@ int percent_print(va_list myzero)
 int all_print(va_list myzero, const char format)
 {
 	switch (format)
-
 	{
 		case ' ':
 			return (-1);
