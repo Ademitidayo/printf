@@ -6,7 +6,7 @@
  */
 int d_print(va_list myzero)
 {
-	int zero_printed = -1;
+	int zero_printed = 0;
 	int num = va_arg(myzero, int);
 	int last_digit, index;
 	char *point;
