@@ -40,12 +40,12 @@ int S_print(va_list myzero)
  */
 int print_hex(unsigned char c)
 {
-	int count = 0;
+	int zero_printed = 0;
 	char hex[] = "0123456789ABCDEF";
 
 	if (c < 16)
-	count += write(1, &hex[c / 16], 1);
-	count += write(1, &hex[c % 16], 1);
+	zero_printed += write(1, &hex[c / 16], 1);
+	zero_printed += write(1, &hex[c % 16], 1);
 
-	return count;
+	return (zero_printed);
 }
