@@ -83,6 +83,11 @@ int all_print(va_list myzero, const char format)
 			result = (percent_print(myzero));
 			break;
 		case 'd':
+			result = (d_print(myzero));
+			break;
+		case 'S':
+			result = (S_print(myzero));
+			break;
 		case 'i':
 			result = (d_print(myzero));
 			break;

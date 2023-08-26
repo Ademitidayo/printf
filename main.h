@@ -24,5 +24,8 @@ int _integer(va_list myzero);
 int _uinteger(va_list myzero);
 int b_print(va_list myzero);
 void b_print_rec(unsigned int x, int *two_printed);
+int S_print(va_list myzero);
+int print_hex(unsigned char c);
+
 
 #endif
