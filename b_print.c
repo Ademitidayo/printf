@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * b_print_rec - using recursion to print binary
  * @x: The input integer
@@ -5,10 +6,12 @@
  */
 void b_print_rec(unsigned int x, int *two_printed)
 {
-	if (n > 1)
+	char z;
+	
+	if (x > 1)
 		b_print_rec(x / 2, two_printed);
 
-	char z = '0' + (x % 2);
+	z = '0' + (x % 2);
 
 	write(1, &z, 1);
 	(*two_printed)++;
@@ -23,6 +26,6 @@ int b_print(va_list myzero)
 	unsigned int x = va_arg(myzero, unsigned int);
 	int two_printed = 0;
 
-	b_print_rec(n, &two_printed);
+	b_print_rec(x, &two_printed);
 	return (two_printed);
 }
