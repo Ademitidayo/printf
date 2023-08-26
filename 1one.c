@@ -6,19 +6,21 @@
  */
 int d_print(va_list myzero)
 {
-	int zero_printed = 0;
+	int zero_printed = -1;
 	int num = va_arg(myzero, int);
 	int last_digit, index;
 	char *point;
+	int negative = 0;
 
-	if (num == '\0')
-		return (0);
+	if (num == 0)
+		return (1);
 
 	else if (num < 0)
 	{
 		num = -num;
 		write(1, "-", 1);
 		zero_printed++;
+		negative = 1;
 	}
 	last_digit = num;
 
@@ -29,7 +31,7 @@ int d_print(va_list myzero)
 	}
 	point = (char *)malloc((zero_printed + 2) * sizeof(char));
 	if (point == NULL)
-		return (-1);
+	return (1);
 	index = zero_printed - 1;
 	while (num > 0)
 	{
@@ -42,5 +44,7 @@ int d_print(va_list myzero)
 	write(1, point, zero_printed);
 	free(point);
 
-	return (zero_printed);
+	return (zero_printed + negative);
 }
+
+
