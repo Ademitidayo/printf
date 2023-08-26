@@ -26,6 +26,6 @@ int b_print(va_list myzero);
 void b_print_rec(unsigned int x, int *two_printed);
 int S_print(va_list myzero);
 int print_hex(unsigned char c);
-
+int p_print(va_list myzero);
 
 #endif

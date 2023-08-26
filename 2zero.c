@@ -88,6 +88,9 @@ int all_print(va_list myzero, const char format)
 		case 'S':
 			result = (S_print(myzero));
 			break;
+		case 'p':
+			result = (p_print(myzero));
+			break;
 		case 'i':
 			result = (d_print(myzero));
 			break;
